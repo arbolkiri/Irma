@@ -1,0 +1,140 @@
+@import "../bower_components/normalize-scss/_normalize.scss";
+@import "../bower_components/typeplate-starter-kit/css/_typeplate.scss";
+@import "../bower_components/fontawesome/css/font-awesome.min.css";
+@mixin gridify($col, $width, $gutter: 2) {
+    @media only screen and (min-width: #{$width}#{"px"}){
+        .grid-#{$col}-#{$width} {
+            & > * {
+                width: #{(100 / $col) - $gutter}#{"%"};
+            }
+        }
+    }
+}
+
+/**
+ * BOX-SIZING
+ */
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+/**
+ * GRIDS
+ */
+
+.grid {
+    width: 100%;
+    display: block;
+    font-size: 0;
+    text-align: justify;
+    position: relative;
+    & > * {
+        font-size: medium;
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+        vertical-align: top;
+    }
+    &:after {
+        display: inline-block;
+        width: 100%;
+        content: "";
+        font-size: medium;
+    }
+}
+@include gridify(2, 400);
+@include gridify(3, 800);
+/**
+ * GENERAL
+ */
+
+body {
+    min-height: 600px;
+
+}
+.ShirtA {
+    border: 2px solid #73A2B0;
+    min-height: 10%;
+    position: relative;
+    overflow: auto;
+    
+}
+
+img {
+    width: 100%;
+    display: block;
+    margin: auto;
+    
+}
+
+table {
+    position: relative;
+    table-layout: fixed;
+    border: 1px solid #73A2B0;
+    width: 100%;
+
+    td:first-child img {
+        width: 50%;
+    }
+}
+td {
+    text-align: center;
+    color: blue;
+    border-right: 1px solid #73A2B0;
+}
+
+td:last-child {
+    border-right: 0px;
+}
+td.shrtprice {
+    text-align: right;
+    border: 1px solid white;
+    border-bottom:0px;
+    color:#73A2B0;
+}
+
+td.shrtname {
+    text-align: left;
+    border: 1px solid white;
+    color:#73A2B0;
+    border-bottom: 0px;
+}
+
+td i{
+    text-align: center;
+}
+
+td:hover{
+   background-color: #B0E0E6; 
+}
+table.container:hover{
+    background-color: none;
+}
+.rotate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #73A2B0;
+    
+    color: #73A2B0;
+    width: 10%;
+    
+ }   
+
+ .rotate:hover {
+    background-color: #B0E0E6;
+    transform: rotateY(306deg) url(http://images.cdn.bigcartel.com/bigcartel/product_images/137732272/max_h-1000+max_w-1000/HouBrew_surferscoop_womengreen.png)
+}
+@keyframes rotateY {
+    transform: rotate(360deg);
+}
+
+.fa {
+    color:#73A2B0;
+}
+
+table.container {
+    border-style: none;
+}
+
+
